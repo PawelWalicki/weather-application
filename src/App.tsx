@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import { CurrentWeatherContainer } from './components/CurrentWeatherContainer';
+import { CurrentWeatherContainer } from './components/CurrentWeatherContainer/CurrentWeatherContainer';
 import { WeatherContext } from './context/WeatherContext';
 import { SearchBarContext } from './context/SearchBarContext';
-import { SearchBar } from './components/SearchBar';
+import { SearchBar } from './components/SearchBar/SearchBar';
+import { AppContainer } from './components/AppContainer/AppContainer';
 
 const API_KEY = "142da968d1acb42c1be437f8aec5abbf"
 function App() {
@@ -63,10 +64,7 @@ function App() {
     <WeatherContext.Provider value={{weather: weather, forecast: forecast, airQuality}}>
       <SearchBarContext.Provider value={{location, setLocation}}>
          <div className="App">
-        <header className="App-header">
-        <CurrentWeatherContainer/>
-        <SearchBar />
-       </header>
+          <AppContainer/>
        </div>
       </SearchBarContext.Provider>
      

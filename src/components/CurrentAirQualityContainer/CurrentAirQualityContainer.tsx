@@ -1,4 +1,4 @@
-import { CurrentAirQualityValue } from "./CurrentAirQualityValue"
+import { CurrentAirQualityValue } from "../CurrentAirQualityValue/CurrentAirQualityValue"
 
 export function CurrentAirQualityContainer() {
     return (
