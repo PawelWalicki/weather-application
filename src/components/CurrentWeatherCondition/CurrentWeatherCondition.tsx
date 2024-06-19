@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { WeatherContext } from "../../context/WeatherContext"
 import { SearchBarContext } from "../../context/SearchBarContext"
-import "./CurrentWeatherContainer.css"
+import "./CurrentWeatherCondition.css"
 
 export function CurrentWeatherCondition() {
     const { weather } = useContext(WeatherContext)
