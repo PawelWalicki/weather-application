@@ -1,0 +1,13 @@
+::after,
+::before {
+    box-sizing: inherit;
+}
+
+.days {
+width: 350px;
+height: 400px;
+background:  #D9D9D9;
+border-radius: 30px;
+filter: drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.5));
+
+}
