@@ -6,11 +6,13 @@ import "./AppContainer.css"
 
 export const AppContainer = () => {
     return (
-        <div className="container">
-            <SearchBar />
-            <CurrentWeatherContainer />
-            <DaysForecast />
-            <HourlyForecast />
+        <div >
+            <div className="container">
+                <SearchBar />
+                <CurrentWeatherContainer />
+                <DaysForecast />
+                <HourlyForecast />
+            </div>
         </div>
     )
 }
