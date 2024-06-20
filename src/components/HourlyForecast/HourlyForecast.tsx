@@ -1,6 +1,8 @@
+import "./HourlyForecast.css"
+
 export function HourlyForecast() {
     return (
-        <div>
+        <div className="hourly">
            HourlyForecast
         </div>
     )

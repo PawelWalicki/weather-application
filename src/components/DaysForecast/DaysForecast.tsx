@@ -1,6 +1,8 @@
+import "./DaysForecast.css"
+
 export function DaysForecast() {
     return (
-        <div>
+        <div className="days">
            DaysForecast
         </div>
     )
