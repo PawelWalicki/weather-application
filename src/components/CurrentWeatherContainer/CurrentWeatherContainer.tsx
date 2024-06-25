@@ -3,10 +3,11 @@ import { CurrentWeatherCondition } from "../CurrentWeatherCondition/CurrentWeath
 
 export function CurrentWeatherContainer() {
     return (
-        <div>
-            <CurrentWeatherCondition/>
-            <CurrentAirQualityContainer/>
-        </div>
+        <>
+            {/* <CurrentWeatherCondition/>
+            <CurrentAirQualityContainer/> */}
+            
+        </>
 
     )
 }
