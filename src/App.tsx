@@ -1,9 +1,7 @@
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import './App.css';
-import { CurrentWeatherContainer } from './components/CurrentWeatherContainer/CurrentWeatherContainer';
 import { WeatherContext } from './context/WeatherContext';
 import { SearchBarContext } from './context/SearchBarContext';
-import { SearchBar } from './components/SearchBar/SearchBar';
 import { AppContainer } from './components/AppContainer/AppContainer';
 
 const API_KEY = "142da968d1acb42c1be437f8aec5abbf"
@@ -60,17 +58,24 @@ function App() {
   }, [location])
   return (
     
-    
-    <WeatherContext.Provider value={{weather: weather, forecast: forecast, airQuality}}>
-      <SearchBarContext.Provider value={{location, setLocation}}>
-         <div className="App">
-          <AppContainer/>
-       </div>
-      </SearchBarContext.Provider>
-     
-    </WeatherContext.Provider>
+    <Suspense fallback={<Loading/>}>
 
+      <WeatherContext.Provider value={{weather: weather, forecast: forecast, airQuality}}>
+        <SearchBarContext.Provider value={{location, setLocation}}>
+           <div className="App">
+          <AppContainer/>
+          </div>
+        </SearchBarContext.Provider>
+     
+      </WeatherContext.Provider>
+    </Suspense>
+    
   );
 }
+
+function Loading() {
+  return <h2>🌀 Loading...</h2>;
+}
+
 
 export default App;

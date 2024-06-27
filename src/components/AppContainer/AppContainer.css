@@ -9,3 +9,11 @@
     height: 982px;
     background: linear-gradient(112.65deg, #FFFFFF 0.28%, rgba(70, 97, 115, 0) 178.65%);
 }
+
+.header {
+
+}
+
+.main {
+    display: grid;
+}
