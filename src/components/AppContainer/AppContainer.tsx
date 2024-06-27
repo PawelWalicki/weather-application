@@ -10,13 +10,20 @@ export const AppContainer = () => {
     return (
         <div >
             <div className="container">
-                <SearchBar />
-                <CurrentWeatherContainer />
-                <CurrentWeatherCondition/> 
-                <CurrentAirQualityContainer/>
-                <DaysForecast />
-                <HourlyForecast />
+                <div className="header">
+                    <SearchBar />
+                </div>
+                <div className="main">
+                    <div className="current-weather">
+                        <CurrentWeatherCondition />
+                    </div>
+                    <CurrentWeatherContainer />
+                    <CurrentAirQualityContainer />
+                    <DaysForecast />
+                    <HourlyForecast />
+                </div>
             </div>
         </div>
     )
 }
+

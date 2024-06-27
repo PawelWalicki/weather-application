@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { WeatherContext } from "../../context/WeatherContext"
-import { getHoursAndMuntesFromTimestamp } from "../../utils/converters"
+import { getHoursAndMinutesFromTimestamp } from "../../utils/converters"
 
 
 
@@ -10,9 +10,9 @@ export function SunriseTime() {
 
         <div>
             <div>Sunrise</div>
-            <div>{forecast.city && getHoursAndMuntesFromTimestamp(forecast.city.sunrise)} </div>
+            <div>{forecast.city && getHoursAndMinutesFromTimestamp(forecast.city.sunrise)} </div>
             <div>Sunset</div>
-            <div>{forecast.city && getHoursAndMuntesFromTimestamp(forecast.city.sunset)} </div>
+            <div>{forecast.city && getHoursAndMinutesFromTimestamp(forecast.city.sunset)} </div>
         </div>
     )
 
