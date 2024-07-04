@@ -1,0 +1,31 @@
+::after,
+::before {
+    box-sizing: inherit;
+}
+
+.overall-weather {
+    padding: 10px;
+    display: grid;
+    grid-template-rows: 45% 55%;
+}
+
+.temp-overall {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.temp-feels {
+
+}
+
+.temp-other {
+    display: flex;
+}
+
+.rest-overall {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: end;
+}
