@@ -30,3 +30,11 @@ export function getFormattedDate() {
     // Złożenie końcowego formatu
     return `${dayName}`;
 }
+
+export function getDDMMfromDate(dt_txt: string) {
+    const date = dt_txt.split(" ")[0]
+    const day = date.split("-")[2]
+    const month = date.split("-")[1]
+    const DDMM = `${day}/${month}`
+    return DDMM
+}
