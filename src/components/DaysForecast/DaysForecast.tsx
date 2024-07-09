@@ -2,20 +2,7 @@ import { useContext, useEffect, useState } from "react"
 import "./DaysForecast.css"
 import { WeatherContext } from "../../context/WeatherContext"
 import { getDDMMfromDate, kelvinToCelcius } from "../../utils/converters"
-
-type ForecastEntryType = {
-    clouds: Object,
-    dt: number,
-    dt_txt: string,
-    main: any,
-    pop: number,
-    rain: Object,
-    sys: Object,
-    visibility: number,
-    weather: any,
-    wind: Object,
-}
-
+import { ForecastEntryType } from "../../types/ForecastEntry"
 export function DaysForecast() {
     const { forecast } = useContext(WeatherContext)
     const [daysForecast, setDaysForecast] = useState<ForecastEntryType[]>([])
@@ -27,7 +14,7 @@ export function DaysForecast() {
     }, [forecast])
 
     return (
-        <div className="days">
+        <div className="days df">
             <p className="title-days">5 Days Forecast</p>
             { 
                 daysForecast.map((day: ForecastEntryType) => {
