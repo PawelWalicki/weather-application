@@ -38,3 +38,10 @@ export function getDDMMfromDate(dt_txt: string) {
     const DDMM = `${day}/${month}`
     return DDMM
 }
+
+export function getHourFromDate(dt_txt: string) {
+    const time = dt_txt.split(" ")[1]
+    const hourOnly = time.split(":")[0]
+    const hour = `${hourOnly}:00`
+    return hour
+}
