@@ -7,7 +7,7 @@ import "./OverallWeatherContainer.css"
 export function OverallWeatherContainer() {
     const { weather } = useContext(WeatherContext)
     return (
-        <div className="overall-weather">
+        <div className="overall-weather ">
             <div className="temp-overall">
                 <div className="temp-feels">
                     <div>Feels like</div>
@@ -27,12 +27,14 @@ export function OverallWeatherContainer() {
             </div>
             <div className="rest-overall">
                 <div>
+                    <img className="pressure-img" src="/pressure.png"/>
                     <div>Pressure</div>
-                    <div>{weather.main && weather.main.pressure}</div>
+                    <div>{weather.main && weather.main.pressure} hPa</div>
                 </div>
                 <div>
+                    <img className="wind-img" src="/wind.png"/>
                     <div>Wind Speed</div>
-                    <div>{weather.wind && weather.wind.speed}</div>
+                    <div>{weather.wind && weather.wind.speed} km/h</div>
                 </div>
             </div>
         </div>

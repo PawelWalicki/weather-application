@@ -8,7 +8,7 @@ export function CurrentAirQualityContainer() {
     
 
     return (
-        <div className="air-quality">
+        <div className="air-quality aq">
             <OverallWeatherContainer/>
             <SunriseTime/>
             <CurrentAirQualityValue/>

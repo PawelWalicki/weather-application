@@ -2,3 +2,30 @@
 ::before {
     box-sizing: inherit;
 }
+
+.air-value {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 10%;
+    padding-top: 5%;
+    text-align: center;
+}
+
+.quality-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item-aqi {
+    grid-column: span 2;
+}
+
+.title {
+    /* display: grid; */
+}
+
+.value {
+    display: grid;
+}

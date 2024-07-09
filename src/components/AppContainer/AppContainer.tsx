@@ -9,11 +9,11 @@ export const AppContainer = () => {
     return (
         <div >
             <div className="container">
-                <div className="header">
+                <div className="header hdr">
                     <SearchBar />
                 </div>
                 <div className="main">
-                    <div className="current-weather">
+                    <div className="current-weather cw">
                         <CurrentWeatherCondition />
                     </div>
                     <CurrentAirQualityContainer />

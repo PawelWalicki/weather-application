@@ -12,5 +12,38 @@
 }
 
 .main {
+    height: 75vh;
     display: grid;
+    justify-items: center;
+    justify-content: space-between;
+    align-content: space-between;
+    grid-template-areas: 
+    "hdr hdr hdr hdr hdr"
+    "cw cw cw aq aq "
+    "df df hf hf hf"
+    "ftr ftr ftr ftr ftr";
+}
+
+.hdr{ 
+    grid-area: hdr;
+}
+
+.cw {
+    grid-area: cw;
+}
+
+.aq {
+    grid-area: aq;
+}
+
+.df {
+    grid-area: df;
+}
+
+.hf {
+    grid-area: hf;
+}
+
+.ftr {
+    grid-area: ftr;
 }
