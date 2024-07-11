@@ -14,6 +14,27 @@ function App() {
   // state: airQuality
   // state: forecast
 
+  const fetchAirQuality = async (lon:any, lat:any) => {
+    try {
+      const airQuality = await fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${API_KEY}`)
+      const json = await airQuality.json()
+      return json
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  const fetchForecastData = async (lon:any, lat:any) => {
+    try {
+      const forecastData = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}`)
+      const json = await forecastData.json()
+      return json
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+
   useEffect(() => {
     const fetchWeather = async () => {
       try {
@@ -27,26 +48,6 @@ function App() {
           return json
         }
       } catch (err){
-        console.log(err)
-      }
-    }
-
-    const fetchAirQuality = async (lon:any, lat:any) => {
-      try {
-        const airQuality = await fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${API_KEY}`)
-        const json = await airQuality.json()
-        return json
-      } catch (err) {
-        console.log(err)
-      }
-    }
-
-    const fetchForecastData = async (lon:any, lat:any) => {
-      try {
-        const forecastData = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}`)
-        const json = await forecastData.json()
-        return json
-      } catch (err) {
         console.log(err)
       }
     }
@@ -67,6 +68,41 @@ function App() {
     fetchData()
 
   }, [location.selected])
+
+  useEffect(() => {
+    const fetchWeather = async () => {
+      try {
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lon=${locationDetected.lon}&lat=${locationDetected.lat}&appid=${API_KEY}`)
+        const json = await response.json()
+        if(json.cod !== 200){
+          alert("City not found")
+          throw Error("City not found")
+        } else {
+          setLocation((prev:any) => ({found:json.name, selected:json.name}))
+          return json
+        }
+      } catch (err){
+        console.log(err)
+      }
+    }
+
+    const fetchData = async () => {
+      try {
+        const weather = await fetchWeather()
+        const airQuality = await fetchAirQuality(weather.coord.lon, weather.coord.lat)
+        const forecastData = await fetchForecastData(weather.coord.lon, weather.coord.lat)
+        setWeather(weather)
+        setAirQuality(airQuality)
+        setForecast(forecastData)  
+      } catch(err) {
+        console.log(err)
+      }
+      }
+
+    fetchData()
+
+  }, [locationDetected])
+
   return (
     
     <Suspense fallback={<Loading/>}>

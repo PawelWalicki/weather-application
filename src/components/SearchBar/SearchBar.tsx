@@ -3,14 +3,17 @@ import { SearchBarContext } from "../../context/SearchBarContext"
 import "./SearchBar.css"
 
 export function SearchBar () {
-    const {location, setLocation} = useContext(SearchBarContext)
+    const {location, setLocation, setLocationDetected, locationDetected} = useContext(SearchBarContext)
     const [inputValue, setInputValue] = useState<string>("") 
-    const [currentPosition, setCurrentPosition] = useState<any>("")
     return(        
         <div className="search-bar">            
             <input className="input" value={inputValue} onChange={(event)=> setInputValue(event.target.value)}></input>
             <button className="button" onClick={() => setLocation((prev:any) => ({...prev, selected: inputValue}))}>Search</button>
-            <button onClick={()=>navigator.geolocation.getCurrentPosition((p) => setCurrentPosition(p))}>Localization</button>
+            <button onClick={()=> {
+                navigator.geolocation.getCurrentPosition((p) => setLocationDetected({lon:p.coords.longitude, lat:p.coords.latitude}))
+                setInputValue("")
+            }
+            }>Localization</button>
         </div>
     )
 }
