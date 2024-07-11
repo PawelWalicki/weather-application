@@ -1,0 +1,47 @@
+::after,
+::before {
+    box-sizing: inherit;
+}
+
+.overall-weather {
+    padding: 10px;
+    display: grid;
+    grid-template-rows: 45% 55%;
+}
+
+.temp-overall {
+    padding-left: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.temp-feels {
+    font-weight: 700;
+    font-size: x-large;
+    text-align: left;
+}
+
+.temp-other {
+    font-weight: 700;
+    font-size: large;
+    width: 125%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+}
+
+.rest-overall {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: end;
+}
+
+.pressure-img {
+    width: 45%;
+}
+
+.wind-img {
+    width: 45%;
+}

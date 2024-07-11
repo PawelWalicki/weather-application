@@ -1,6 +1,5 @@
 import { CurrentAirQualityContainer } from "../CurrentAirQualityContainer/CurrentAirQualityContainer"
 import { CurrentWeatherCondition } from "../CurrentWeatherCondition/CurrentWeatherCondition"
-import { CurrentWeatherContainer } from "../CurrentWeatherContainer/CurrentWeatherContainer"
 import { DaysForecast } from "../DaysForecast/DaysForecast"
 import { HourlyForecast } from "../HourlyForecast/HourlyForecast"
 import { SearchBar } from "../SearchBar/SearchBar"
@@ -10,14 +9,13 @@ export const AppContainer = () => {
     return (
         <div >
             <div className="container">
-                <div className="header">
+                <div className="header hdr">
                     <SearchBar />
                 </div>
                 <div className="main">
-                    <div className="current-weather">
+                    <div className="current-weather cw">
                         <CurrentWeatherCondition />
                     </div>
-                    <CurrentWeatherContainer />
                     <CurrentAirQualityContainer />
                     <DaysForecast />
                     <HourlyForecast />

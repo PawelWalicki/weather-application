@@ -12,7 +12,7 @@ export function CurrentWeatherCondition() {
     return (
         <div className="condition-box">
             <div className="date-box">
-                <div className="location">{location}</div>
+                <div className="location">{location.found}</div>
                 <div className="time">{getCurrentTime()}</div>
                 <div className="date">{getFormattedDate()}</div>
                 <div className="temp-day">{Math.floor(kelvinToCelcius(weather.main?.temp))}°C</div>
