@@ -17,10 +17,10 @@ export function DaysForecast() {
         <div className="days df">
             <p className="title-days">5 Days Forecast</p>
             { 
-                daysForecast.map((day: ForecastEntryType) => {
+                daysForecast.map((day: ForecastEntryType, index: number) => {
 
                     return (
-                        <div className="days-forecast"> 
+                        <div key={index} className="days-forecast"> 
                             <div><img src={`https://openweathermap.org/img/wn/${day.weather[0].icon}.png`} /></div>
                             <div>{Math.floor(kelvinToCelcius(day.main.temp))} °C</div>
                             <div>{getDDMMfromDate(day.dt_txt)}</div>

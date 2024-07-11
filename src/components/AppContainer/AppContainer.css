@@ -11,6 +11,11 @@
 
 }
 
+.current-weather {
+    width: 38vw;
+    height: 30vh;
+}
+
 .main {
     height: 75vh;
     display: grid;

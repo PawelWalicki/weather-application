@@ -8,5 +8,9 @@ export type ForecastEntryType = {
     sys: Object,
     visibility: number,
     weather: any,
-    wind: Object,
+    wind: {
+        deg: number,
+        gust: number,
+        speed: number
+    },
 }

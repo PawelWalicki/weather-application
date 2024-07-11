@@ -9,16 +9,23 @@ function App() {
   const [weather, setWeather] = useState({})
   const [airQuality, setAirQuality] = useState({})
   const [forecast, setForecast] = useState({})
-  const [location, setLocation] = useState("Warsaw")
+  const [location, setLocation] = useState({selected: "Warsaw", found: "Warsaw"})
+  const [locationDetected, setLocationDetected] = useState({lon: "21.0118", lat: "52.2298"})
   // state: airQuality
   // state: forecast
 
   useEffect(() => {
     const fetchWeather = async () => {
       try {
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}`)
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location.selected}&appid=${API_KEY}`)
         const json = await response.json()
-        return json
+        if(json.cod !== 200){
+          alert("City not found")
+          throw Error("City not found")
+        } else {
+          setLocation((prev:any) => ({...prev, found: location.selected}))
+          return json
+        }
       } catch (err){
         console.log(err)
       }
@@ -45,23 +52,27 @@ function App() {
     }
 
     const fetchData = async () => {
-      const weather = await fetchWeather()
-      const airQuality = await fetchAirQuality(weather.coord.lon, weather.coord.lat)
-      const forecastData = await fetchForecastData(weather.coord.lon, weather.coord.lat)
-      setWeather(weather)
-      setAirQuality(airQuality)
-      setForecast(forecastData)
-    }
+      try {
+        const weather = await fetchWeather()
+        const airQuality = await fetchAirQuality(weather.coord.lon, weather.coord.lat)
+        const forecastData = await fetchForecastData(weather.coord.lon, weather.coord.lat)
+        setWeather(weather)
+        setAirQuality(airQuality)
+        setForecast(forecastData)  
+      } catch(err) {
+        console.log(err)
+      }
+      }
 
     fetchData()
 
-  }, [location])
+  }, [location.selected])
   return (
     
     <Suspense fallback={<Loading/>}>
 
       <WeatherContext.Provider value={{weather: weather, forecast: forecast, airQuality}}>
-        <SearchBarContext.Provider value={{location, setLocation}}>
+        <SearchBarContext.Provider value={{location, setLocation, locationDetected, setLocationDetected}}>
            <div className="App">
           <AppContainer/>
           </div>
