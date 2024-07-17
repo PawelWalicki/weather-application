@@ -1,11 +1,11 @@
 import { useContext } from "react"
 import { WeatherContext } from "../../context/WeatherContext"
 import { getHoursAndMinutesFromTimestamp } from "../../utils/converters"
-import "./SunriseTime.css"
+import "./TimeOfSunrise.css"
 
 
 
-export function SunriseTime() {
+export function TimeOfSunrise() {
     const {forecast} = useContext(WeatherContext)
     return (
 

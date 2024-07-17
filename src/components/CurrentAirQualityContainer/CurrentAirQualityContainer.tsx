@@ -1,7 +1,7 @@
 import { CurrentAirQualityValue } from "../CurrentAirQualityValue/CurrentAirQualityValue"
 import "./CurrentAirQualityContainer.css"
 import { OverallWeatherContainer } from "../OverallWeatherContainer/OverallWeatherContainer"
-import { SunriseTime } from "../SunriseTime/SunriseTime"
+import { TimeOfSunrise } from "../TimeOfSunrise/TimeOfSunrise"
 
 
 export function CurrentAirQualityContainer() {
@@ -10,7 +10,7 @@ export function CurrentAirQualityContainer() {
     return (
         <div className="air-quality aq">
             <OverallWeatherContainer/>
-            <SunriseTime/>
+            <TimeOfSunrise/>
             <CurrentAirQualityValue/>
         </div>
 
