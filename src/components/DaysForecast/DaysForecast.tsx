@@ -21,7 +21,7 @@ export function DaysForecast() {
 
                     return (
                         <div key={index} className="days-forecast"> 
-                            <div><img src={`https://openweathermap.org/img/wn/${day.weather[0].icon}.png`} /></div>
+                            <img className="days-icon" src={`https://openweathermap.org/img/wn/${day.weather[0].icon}.png`} />
                             <div>{Math.floor(kelvinToCelcius(day.main.temp))} °C</div>
                             <div>{getDDMMfromDate(day.dt_txt)}</div>
                         </div>

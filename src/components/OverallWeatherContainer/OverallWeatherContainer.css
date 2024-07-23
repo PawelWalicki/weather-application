@@ -10,7 +10,7 @@
 }
 
 .temp-overall {
-    padding-left: 5%;
+    padding-left: 18%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -33,15 +33,17 @@
 }
 
 .rest-overall {
+    font-weight: 600;
+    font-size: large;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: end;
 }
 
 .pressure-img {
-    width: 45%;
+    width: 30%;
 }
 
 .wind-img {
-    width: 45%;
+    width: 30%;
 }

@@ -9,13 +9,13 @@ export function TimeOfSunrise() {
     const {forecast} = useContext(WeatherContext)
     return (
 
-        <div className="sun-time">
-            <div>Sunrise</div>
+        <div className="sun-box">
+            <div className="sun-headline">Sunrise</div>
             <img className="sun-img" src="/sunrise.png"/>
-            <div>{forecast.city && getHoursAndMinutesFromTimestamp(forecast.city.sunrise)} </div>
-            <div>Sunset</div>
+            <div className="sun-time">{forecast.city && getHoursAndMinutesFromTimestamp(forecast.city.sunrise)} </div>
+            <div className="sun-headline">Sunset</div>
             <img className="sun-img" src="/sunset.png"/>
-            <div>{forecast.city && getHoursAndMinutesFromTimestamp(forecast.city.sunset)} </div>
+            <div className="sun-time">{forecast.city && getHoursAndMinutesFromTimestamp(forecast.city.sunset)} </div>
         </div>
     )
 

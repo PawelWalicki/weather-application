@@ -22,12 +22,19 @@
 }
 
 .hourly-box {
+    font-weight: 500;
+    font-size: large;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
 }
 
-.wind-img {
-    width: 45%;
+.hourly-title {
+    font-size: larger;
+    font-weight: 700;
+}
+
+.hourly-icon {
+    width: 50%;
 }
