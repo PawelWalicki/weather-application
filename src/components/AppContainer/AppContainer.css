@@ -3,10 +3,6 @@
     box-sizing: inherit;
 }
 
-.container {
-
-}
-
 .header {
 
 }
@@ -51,4 +47,17 @@
 
 .ftr {
     grid-area: ftr;
+}
+
+@media (max-width:770px){
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+    .main {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
 }

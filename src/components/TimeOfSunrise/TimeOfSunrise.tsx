@@ -6,6 +6,9 @@ import "./TimeOfSunrise.css"
 
 
 export function TimeOfSunrise() {
+    /*
+        We store forecast data in WeatherContext
+    */
     const {forecast} = useContext(WeatherContext)
     return (
 
