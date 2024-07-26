@@ -4,7 +4,7 @@ import { WeatherContext } from './context/WeatherContext';
 import { SearchBarContext } from './context/SearchBarContext';
 import { AppContainer } from './components/AppContainer/AppContainer';
 
-const API_KEY = "142da968d1acb42c1be437f8aec5abbf"
+const API_KEY = process.env.REACT_APP_API_KEY
 function App() {
   const [weather, setWeather] = useState({})
   const [airQuality, setAirQuality] = useState({})
