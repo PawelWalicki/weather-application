@@ -1,0 +1,27 @@
+::after,
+::before {
+    box-sizing: inherit;
+}
+
+.sun-box {    
+    padding-top: 5%;
+    padding-bottom: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.sun-headline {
+    font-size: x-large;
+    font-weight: 700;
+}
+
+.sun-time {
+    font-size: large;
+    font-weight: 700;
+}
+
+.sun-img {
+    width: 37%;
+    height: 20%;
+}

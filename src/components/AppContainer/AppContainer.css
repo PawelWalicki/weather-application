@@ -1,0 +1,63 @@
+::after,
+::before {
+    box-sizing: inherit;
+}
+
+.header {
+
+}
+
+.current-weather {
+    width: 38vw;
+    height: 30vh;
+}
+
+.main {
+    height: 75vh;
+    display: grid;
+    justify-items: center;
+    justify-content: space-between;
+    align-content: space-between;
+    grid-template-areas: 
+    "hdr hdr hdr hdr hdr"
+    "cw cw cw aq aq "
+    "df df hf hf hf"
+    "ftr ftr ftr ftr ftr";
+}
+
+.hdr{ 
+    grid-area: hdr;
+}
+
+.cw {
+    grid-area: cw;
+}
+
+.aq {
+    grid-area: aq;
+}
+
+.df {
+    grid-area: df;
+}
+
+.hf {
+    grid-area: hf;
+}
+
+.ftr {
+    grid-area: ftr;
+}
+
+@media (max-width:770px){
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+    .main {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
