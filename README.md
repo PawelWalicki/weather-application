@@ -25,6 +25,7 @@
 - Grid
 - Typescript
 - React 
+- Context Api
 
 ### Prepared for widths:
 
