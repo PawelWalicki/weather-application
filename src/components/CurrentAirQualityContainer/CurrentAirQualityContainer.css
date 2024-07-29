@@ -7,7 +7,7 @@
     display: grid;
     grid-template-columns: 2fr 1fr 2fr;
     width: 57vw;
-    height: 30vh;
+    height: 37vh;
     background: #D9D9D9;
     filter: drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.5));
     border-radius: 30px;

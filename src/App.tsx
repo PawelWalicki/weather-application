@@ -109,7 +109,7 @@ function App() {
 
       <WeatherContext.Provider value={{weather: weather, forecast: forecast, airQuality}}>
         <SearchBarContext.Provider value={{location, setLocation, locationDetected, setLocationDetected}}>
-           <div className="App">
+           <div >
           <AppContainer/>
           </div>
         </SearchBarContext.Provider>
