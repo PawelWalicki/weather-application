@@ -8,7 +8,7 @@ export function SearchBar() {
     return (
         <div className="search-bar">
             
-                <input className="input" value={inputValue} onChange={(event) => setInputValue(event.target.value)}></input>
+                <input className="input" value={inputValue} onChange={(event) => setInputValue(event.target.value)} placeholder="Search..."></input>
             
             <div className="button-box">
                 <button className="button" onClick={() => setLocation((prev: any) => ({ ...prev, selected: inputValue }))}>Search</button>
