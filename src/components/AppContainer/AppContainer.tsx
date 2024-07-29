@@ -14,7 +14,7 @@ export const AppContainer = () => {
                     <SearchBar />
                 </div>
                 <div className="main">
-                    <div className="cw">
+                    <div className="current-weather cw">
                         <CurrentWeatherCondition />
                     </div>
                     <CurrentAirQualityContainer />

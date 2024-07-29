@@ -5,7 +5,7 @@
 
 .condition-box {
     width: 38vw;
-    height: 37vh;
+    height: 30vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
@@ -15,7 +15,7 @@
 }
 
 .date-box {
-    padding-top: 5%;
+    padding-top: 10%;
     display: grid;
     grid-template-rows: 30% 30% 18%;
 }
