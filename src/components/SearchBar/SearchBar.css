@@ -26,6 +26,7 @@
 }
 
 .input:focus {
+    background: lightgray;
     border-color: rgb(16, 0, 241);
 }
 

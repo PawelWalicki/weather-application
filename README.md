@@ -16,7 +16,7 @@
 - Solution URL: [Solution URL](https://github.com/PawelWalicki/weather-application/tree/develop)
 - Live Site URL: [Live Site URL](https://weather-application-murex-three.vercel.app/)
 
-  ## My process
+## My process
 
 ### Built with
 
@@ -26,6 +26,7 @@
 - Typescript
 - React 
 - Context Api
+- Environment variables
 
 ### Prepared for widths:
 
